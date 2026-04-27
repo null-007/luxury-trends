@@ -1,0 +1,54 @@
+name: Daily Luxury Scrape
+
+on:
+  schedule:
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install playwright curl_cffi beautifulsoup4
+          playwright install chromium
+          playwright install-deps chromium
+          sudo apt-get install -y xvfb
+      
+      - name: Run scraper with virtual display
+        run: xvfb-run python scraper.py
+      
+      - name: Check scrape results
+        run: |
+          python3 -c "
+          import sqlite3
+          from datetime import datetime
+          conn = sqlite3.connect('depop.db')
+          today = datetime.now().strftime('%Y-%m-%d')
+          count = conn.execute('SELECT COUNT(*) FROM listings WHERE last_seen = ?', (today,)).fetchone()[0]
+          conn.close()
+          if count < 5:
+              print('WARNING: Only', count, 'listings found today — scraper may be broken')
+              exit(1)
+          else:
+              print('Scrape healthy:', count, 'listings found')
+          "
+      
+      - name: Commit and push updated dashboard
+        run: |
+          git config user.email "117118203+null-007@users.noreply.github.com"
+          git config user.name "null-007"
+          git add index.html depop.db
+          git commit -m "Daily luxury scrape $(date +%Y-%m-%d)" || echo "No changes"
+          git pull origin main --rebase
+          git push
