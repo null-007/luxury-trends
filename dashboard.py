@@ -1,0 +1,336 @@
+import json
+from database import get_weekly_trends, get_trending_categories
+
+
+def get_filter_buttons(queries):
+    buttons = []
+    for q in queries:
+        btn = f"<button class='filter-btn' onclick=\"filterCards('{q}', this)\">{q}</button>"
+        buttons.append(btn)
+    return ''.join(buttons)
+
+
+def generate_dashboard(stats, queries):
+    trending = get_trending_categories()
+    
+    if trending:
+        trending_html = "".join([
+            f'<div><strong>{r[0]}</strong> &nbsp;<span style="color:#ff2300;font-weight:700">{r[3]}% sold</span> <span style="color:#888;font-size:12px">({r[2]} of {r[1]})</span></div>'
+            for r in trending
+        ])
+    else:
+        trending_html = '<div style="color:#888;font-size:13px">Not enough data yet — check back after a few days of tracking.</div>'
+
+    sell_through_labels = [r[0] for r in stats["sell_through"]]
+    sell_through_rates = [
+        round((r[2] / r[1] * 100), 1) if r[1] > 0 else 0 
+        for r in stats["sell_through"]
+    ]
+    top_brand_labels = [r[0] for r in stats["top_brands"]]
+    top_brand_values = [r[1] for r in stats["top_brands"]]
+    avg_price_labels = [r[0] for r in stats["avg_prices"]]
+    avg_price_values = [round(r[1], 2) if r[1] else 0 for r in stats["avg_prices"]]
+
+    product_cards = ""
+    for p in stats["recent_listings"]:
+        brand, size, price, query, image, link = p
+        product_cards += f"""
+        <a href="{link}" target="_blank" class="card" data-query="{query}">
+            <img src="{image}" alt="{brand}" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">{brand}</span>
+                <span class="size">{size}</span>
+                <span class="price">{price}</span>
+                <span class="query-tag">{query}</span>
+            </div>
+        </a>"""
+
+    sold_cards = ""
+    for p in stats["sold_listings"]:
+        brand, size, price, query, image, link = p
+        sold_cards += f"""
+        <a href="{link}" target="_blank" class="card" data-query="{query}">
+            <img src="{image}" alt="{brand}" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">{brand}</span>
+                <span class="size">{size}</span>
+                <span class="price" style="color:#888;text-decoration:line-through">{price}</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>"""
+
+    weekly_trends, weekly_sell_through = get_weekly_trends()
+    sell_through_lookup = {r[0]: r for r in weekly_sell_through}
+    
+    trending_week_cards = ""
+    for row in weekly_trends:
+        term, total_listings, days_trending, avg_daily = row
+        st_data = sell_through_lookup.get(term, None)
+        sell_rate = f"{st_data[3]}%" if st_data else "Not enough data"
+        avg_price = f"${round(st_data[4], 2)}" if st_data and st_data[4] else "N/A"
+        
+        trending_week_cards += f"""
+        <div style="background: white; border-radius: 12px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
+            <div style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">🔍 {term}</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                <div style="background: #f5f5f5; border-radius: 8px; padding: 10px; text-align: center;">
+                    <div style="font-size: 20px; font-weight: 700; color: #ff2300;">{int(avg_daily)}</div>
+                    <div style="font-size: 11px; color: #888;">avg daily listings</div>
+                </div>
+                <div style="background: #f5f5f5; border-radius: 8px; padding: 10px; text-align: center;">
+                    <div style="font-size: 20px; font-weight: 700; color: #ff2300;">{sell_rate}</div>
+                    <div style="font-size: 11px; color: #888;">sell-through rate</div>
+                </div>
+                <div style="background: #f5f5f5; border-radius: 8px; padding: 10px; text-align: center;">
+                    <div style="font-size: 20px; font-weight: 700; color: #ff2300;">{avg_price}</div>
+                    <div style="font-size: 11px; color: #888;">avg price</div>
+                </div>
+                <div style="background: #f5f5f5; border-radius: 8px; padding: 10px; text-align: center;">
+                    <div style="font-size: 20px; font-weight: 700; color: #ff2300;">{days_trending}</div>
+                    <div style="font-size: 11px; color: #888;">days trending</div>
+                </div>
+            </div>
+        </div>"""
+
+    html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Luxury Trend Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+  body {{ font-family: -apple-system, sans-serif; background: #f5f5f5; color: #222; }}
+  header {{ background: #ff2300; color: white; padding: 24px 32px; }}
+  header h1 {{ font-size: 28px; font-weight: 700; }}
+  header p {{ opacity: 0.85; margin-top: 4px; }}
+  .stats {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 24px 32px; }}
+  .stat {{ background: white; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }}
+  .stat .number {{ font-size: 36px; font-weight: 700; color: #ff2300; }}
+  .stat .label {{ color: #666; margin-top: 4px; font-size: 14px; }}
+  .charts {{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 0 32px 24px; }}
+  .chart-box {{ background: white; border-radius: 12px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }}
+  .chart-box h2 {{ font-size: 16px; font-weight: 600; margin-bottom: 16px; }}
+  .sell-through-note {{ font-size: 12px; color: #888; margin-top: 8px; }}
+  .section-title {{ padding: 0 32px 16px; font-size: 20px; font-weight: 700; }}
+  .grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; padding: 0 32px 32px; }}
+  .card {{ background: white; border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; box-shadow: 0 1px 4px rgba(0,0,0,0.08); transition: transform 0.2s; }}
+  .card:hover {{ transform: translateY(-4px); }}
+  .card img {{ width: 100%; height: 200px; object-fit: cover; }}
+  .card-info {{ padding: 12px; }}
+  .brand {{ display: block; font-weight: 600; font-size: 14px; }}
+  .size {{ display: block; color: #888; font-size: 13px; margin-top: 2px; }}
+  .price {{ display: block; font-weight: 700; color: #ff2300; margin-top: 4px; }}
+  .query-tag {{ display: inline-block; margin-top: 8px; background: #ff2300; border-radius: 20px; padding: 2px 10px; font-size: 11px; color: white; }}
+  .filters {{ display: flex; gap: 12px; padding: 0 32px 24px; flex-wrap: wrap; align-items: center; }}
+  .filter-btn {{ background: white; border: 1.5px solid #ddd; border-radius: 20px; padding: 6px 16px; font-size: 13px; cursor: pointer; transition: all 0.2s; }}
+  .filter-btn:hover {{ border-color: #ff2300; color: #ff2300; }}
+  .filter-btn.active {{ background: #ff2300; color: white; border-color: #ff2300; }}
+  .filter-label {{ font-size: 13px; color: #888; margin-right: 4px; }}
+  .card.hidden {{ display: none; }}
+  .tabs {{ display: flex; gap: 0; padding: 24px 32px 0; }}
+  .tab {{ padding: 10px 24px; font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 8px 8px 0 0; background: #e0e0e0; color: #666; border: none; }}
+  .tab.active {{ background: white; color: #ff2300; }}
+  .tab-content {{ display: none; }}
+  .tab-content.active {{ display: block; }}
+  .dark-toggle {{ position: fixed; top: 16px; right: 24px; z-index: 100; background: rgba(255,255,255,0.2); border: none; border-radius: 20px; padding: 6px 14px; color: white; font-size: 13px; cursor: pointer; }}
+  body.dark {{ background: #1a1a1a; color: #eee; }}
+  body.dark header {{ background: #cc1c00; }}
+  body.dark .stat {{ background: #2a2a2a; }}
+  body.dark .stat .label {{ color: #aaa; }}
+  body.dark .chart-box {{ background: #2a2a2a; }}
+  body.dark .chart-box h2 {{ color: #eee; }}
+  body.dark .card {{ background: #2a2a2a; color: #eee; }}
+  body.dark .brand {{ color: #eee; }}
+  body.dark .size {{ color: #aaa; }}
+  body.dark .filter-btn {{ background: #2a2a2a; border-color: #444; color: #eee; }}
+  body.dark .filter-btn.active {{ background: #ff2300; color: white; }}
+  body.dark .tab {{ background: #333; color: #aaa; }}
+  body.dark .tab.active {{ background: #2a2a2a; color: #ff2300; }}
+  body.dark .section-title {{ color: #eee; }}
+  body.dark .filters {{ background: transparent; }}
+  body.dark .hot-right-now {{ background: #2a2a2a; border-left: 4px solid #ff2300; }}
+  body.dark .hot-right-now div {{ color: #eee; }}
+  .search-bar {{ padding: 0 32px 16px; }}
+  .search-bar input {{ width: 100%; padding: 10px 16px; border-radius: 20px; border: 1.5px solid #ddd; font-size: 14px; outline: none; }}
+  .search-bar input:focus {{ border-color: #ff2300; }}
+  body.dark .search-bar input {{ background: #2a2a2a; border-color: #444; color: #eee; }}
+  .sort-bar {{ padding: 0 32px 16px; display: flex; align-items: center; gap: 12px; }}
+  .sort-bar label {{ font-size: 13px; color: #888; }}
+  .sort-bar select {{ padding: 6px 12px; border-radius: 20px; border: 1.5px solid #ddd; font-size: 13px; cursor: pointer; outline: none; }}
+  .sort-bar select:focus {{ border-color: #ff2300; }}
+  body.dark .sort-bar select {{ background: #2a2a2a; border-color: #444; color: #eee; }}
+</style>
+</head>
+<body>
+<header>
+  <h1>Luxury Trend Dashboard</h1>
+  <p>{stats['total']} listings tracked &nbsp;·&nbsp; {stats['total_sold']} sold detected &nbsp;·&nbsp; Last updated: {stats['last_updated']}</p>
+  <button class="dark-toggle" onclick="toggleDark()">🌙 Dark mode</button>
+</header>
+
+<div class="hot-right-now" style="border-left: 4px solid #ff2300; margin: 24px 32px 0; padding: 16px 20px; border-radius: 8px;">
+  <div style="font-weight: 700; font-size: 14px; color: #ff2300; margin-bottom: 8px;">🔥 Hot right now</div>
+  <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+    {trending_html}
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="number">{stats['total']}</div><div class="label">Total Tracked</div></div>
+  <div class="stat"><div class="number">{stats['total_sold']}</div><div class="label">Sold Detected</div></div>
+  <div class="stat"><div class="number">{round(stats['total_sold'] / stats['total'] * 100, 1) if stats['total'] > 0 else 0}%</div><div class="label">Overall Sell-Through</div></div>
+  <div class="stat"><div class="number">{len(stats['top_brands'])}</div><div class="label">Unique Brands</div></div>
+</div>
+
+<div class="charts">
+  <div class="chart-box">
+    <h2>Sell-Through Rate by Category</h2>
+    <canvas id="sellThroughChart"></canvas>
+    <p class="sell-through-note">% of tracked listings that have sold. More accurate over time.</p>
+  </div>
+  <div class="chart-box"><h2>Top Brands</h2><canvas id="brandsChart"></canvas></div>
+  <div class="chart-box"><h2>Average Price by Category</h2><canvas id="priceChart"></canvas></div>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('available', this)">Available Listings</button>
+  <button class="tab" onclick="switchTab('sold', this)">Sold Listings ({stats['total_sold']})</button>
+  <button class="tab" onclick="switchTab('trending', this)">📈 Trending This Week</button>
+</div>
+
+<div id="available" class="tab-content active">
+  <div class="filters" style="padding-top: 16px;">
+    <span class="filter-label">Filter by:</span>
+    <button class="filter-btn active" onclick="filterCards('all', this)">All</button>
+    {get_filter_buttons(queries)}
+  </div>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search by brand, size, price..." oninput="searchCards(this.value)">
+  </div>
+  <div class="sort-bar">
+    <label>Sort by:</label>
+    <select onchange="sortCards(this.value)">
+      <option value="default">Default</option>
+      <option value="price-low">Price: Low to High</option>
+      <option value="price-high">Price: High to Low</option>
+      <option value="brand">Brand A-Z</option>
+    </select>
+  </div>
+  <div class="section-title" style="padding-top: 16px;">Recent Listings</div>
+  <div class="grid" id="available-grid">{product_cards}</div>
+</div>
+
+<div id="sold" class="tab-content">
+  <div class="section-title" style="padding: 24px 32px 16px;">Sold Listings</div>
+  <div class="grid">{sold_cards}</div>
+</div>
+
+<div id="trending" class="tab-content">
+  <div class="section-title" style="padding: 24px 32px 16px;">Trending This Week</div>
+  <div style="padding: 0 32px 32px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
+    {trending_week_cards}
+  </div>
+</div>
+
+<script>
+  new Chart(document.getElementById('sellThroughChart'), {{
+    type: 'bar',
+    data: {{ 
+      labels: {json.dumps(sell_through_labels)}, 
+      datasets: [{{ 
+        data: {json.dumps(sell_through_rates)}, 
+        backgroundColor: '#ff2300',
+        label: 'Sell-through %'
+      }}] 
+    }},
+    options: {{ plugins: {{ legend: {{ display: false }} }}, scales: {{ y: {{ max: 100, ticks: {{ callback: v => v + '%' }} }} }} }}
+  }});
+  new Chart(document.getElementById('brandsChart'), {{
+    type: 'bar',
+    data: {{ labels: {json.dumps(top_brand_labels)}, datasets: [{{ data: {json.dumps(top_brand_values)}, backgroundColor: '#ff2300' }}] }},
+    options: {{ plugins: {{ legend: {{ display: false }} }}, scales: {{ x: {{ ticks: {{ maxRotation: 45 }} }} }} }}
+  }});
+  new Chart(document.getElementById('priceChart'), {{
+    type: 'bar',
+    data: {{ labels: {json.dumps(avg_price_labels)}, datasets: [{{ data: {json.dumps(avg_price_values)}, backgroundColor: '#ff2300', label: 'Avg $' }}] }},
+    options: {{ plugins: {{ legend: {{ display: false }} }}, scales: {{ x: {{ ticks: {{ maxRotation: 45 }} }}, y: {{ ticks: {{ callback: v => '$' + v }} }} }} }}
+  }});
+  function filterCards(query, btn) {{
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.card').forEach(card => {{
+      if (query === 'all' || card.dataset.query === query) {{
+        card.classList.remove('hidden');
+      }} else {{
+        card.classList.add('hidden');
+      }}
+    }});
+  }}
+  function switchTab(tab, btn) {{
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(tab).classList.add('active');
+  }}
+  function toggleDark() {{
+    document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    const btn = document.querySelector('.dark-toggle');
+    btn.textContent = isDark ? '☀️ Light mode' : '🌙 Dark mode';
+    localStorage.setItem('darkMode', isDark);
+    updateChartColors(isDark);
+  }}
+  function updateChartColors(isDark) {{
+    Chart.instances.forEach(chart => {{
+      chart.data.datasets.forEach(dataset => {{
+        if (dataset.backgroundColor === '#ff2300' || dataset.backgroundColor === '#222' || dataset.backgroundColor === 'black') {{
+          dataset.backgroundColor = '#ff2300';
+        }}
+      }});
+      chart.options.scales.x.ticks.color = isDark ? '#aaa' : '#666';
+      chart.options.scales.y.ticks.color = isDark ? '#aaa' : '#666';
+      chart.update();
+    }});
+  }}
+  if (localStorage.getItem('darkMode') === 'true') {{
+    document.body.classList.add('dark');
+    document.querySelector('.dark-toggle').textContent = '☀️ Light mode';
+    updateChartColors(true);
+  }}
+  function searchCards(query) {{
+    const q = query.toLowerCase();
+    document.querySelectorAll('#available-grid .card').forEach(card => {{
+      const text = card.innerText.toLowerCase();
+      if (text.includes(q)) {{
+        card.classList.remove('hidden');
+      }} else {{
+        card.classList.add('hidden');
+      }}
+    }});
+  }}
+  function sortCards(method) {{
+    const grid = document.getElementById('available-grid');
+    const cards = Array.from(grid.querySelectorAll('.card'));
+    cards.sort((a, b) => {{
+      if (method === 'price-low' || method === 'price-high') {{
+        const priceA = parseFloat(a.querySelector('.price').innerText.replace('$', '')) || 0;
+        const priceB = parseFloat(b.querySelector('.price').innerText.replace('$', '')) || 0;
+        return method === 'price-low' ? priceA - priceB : priceB - priceA;
+      }}
+      if (method === 'brand') {{
+        const brandA = a.querySelector('.brand').innerText.toLowerCase();
+        const brandB = b.querySelector('.brand').innerText.toLowerCase();
+        return brandA.localeCompare(brandB);
+      }}
+      return 0;
+    }});
+    cards.forEach(card => grid.appendChild(card));
+  }}
+</script>
+</body>
+</html>"""
+
+    with open("index.html", "w") as f:
+        f.write(html)
+    print("Dashboard saved to index.html")
