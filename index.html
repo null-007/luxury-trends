@@ -71,21 +71,21 @@
 <body>
 <header>
   <h1>Luxury Trend Dashboard</h1>
-  <p>328 listings tracked &nbsp;·&nbsp; 31 sold detected &nbsp;·&nbsp; Last updated: April 29, 2026 at 11:44 AM</p>
+  <p>331 listings tracked &nbsp;·&nbsp; 116 sold detected &nbsp;·&nbsp; Last updated: April 30, 2026 at 11:46 AM</p>
   <button class="dark-toggle" onclick="toggleDark()">🌙 Dark mode</button>
 </header>
 
 <div class="hot-right-now" style="border-left: 4px solid #ff2300; margin: 24px 32px 0; padding: 16px 20px; border-radius: 8px;">
   <div style="font-weight: 700; font-size: 14px; color: #ff2300; margin-bottom: 8px;">🔥 Hot right now</div>
   <div style="display: flex; gap: 24px; flex-wrap: wrap;">
-    <div><strong>luxury handbag</strong> &nbsp;<span style="color:#ff2300;font-weight:700">27.3% sold</span> <span style="color:#888;font-size:12px">(3 of 11)</span></div><div><strong>luxury watch</strong> &nbsp;<span style="color:#ff2300;font-weight:700">25.0% sold</span> <span style="color:#888;font-size:12px">(3 of 12)</span></div><div><strong>designer dress</strong> &nbsp;<span style="color:#ff2300;font-weight:700">17.6% sold</span> <span style="color:#888;font-size:12px">(3 of 17)</span></div>
+    <div><strong>vintage t shirt</strong> &nbsp;<span style="color:#ff2300;font-weight:700">100.0% sold</span> <span style="color:#888;font-size:12px">(25 of 25)</span></div><div><strong>lululemon define jacket</strong> &nbsp;<span style="color:#ff2300;font-weight:700">100.0% sold</span> <span style="color:#888;font-size:12px">(23 of 23)</span></div><div><strong>carhartt jacket</strong> &nbsp;<span style="color:#ff2300;font-weight:700">100.0% sold</span> <span style="color:#888;font-size:12px">(19 of 19)</span></div>
   </div>
 </div>
 
 <div class="stats">
-  <div class="stat"><div class="number">328</div><div class="label">Total Tracked</div></div>
-  <div class="stat"><div class="number">31</div><div class="label">Sold Detected</div></div>
-  <div class="stat"><div class="number">9.5%</div><div class="label">Overall Sell-Through</div></div>
+  <div class="stat"><div class="number">331</div><div class="label">Total Tracked</div></div>
+  <div class="stat"><div class="number">116</div><div class="label">Sold Detected</div></div>
+  <div class="stat"><div class="number">35.0%</div><div class="label">Overall Sell-Through</div></div>
   <div class="stat"><div class="number">10</div><div class="label">Unique Brands</div></div>
 </div>
 
@@ -101,7 +101,7 @@
 
 <div class="tabs">
   <button class="tab active" onclick="switchTab('available', this)">Available Listings</button>
-  <button class="tab" onclick="switchTab('sold', this)">Sold Listings (31)</button>
+  <button class="tab" onclick="switchTab('sold', this)">Sold Listings (116)</button>
   <button class="tab" onclick="switchTab('trending', this)">📈 Trending This Week</button>
 </div>
 
@@ -109,7 +109,7 @@
   <div class="filters" style="padding-top: 16px;">
     <span class="filter-label">Filter by:</span>
     <button class="filter-btn active" onclick="filterCards('all', this)">All</button>
-    <button class='filter-btn' onclick="filterCards('designer jacket', this)">designer jacket</button><button class='filter-btn' onclick="filterCards('luxury jacket', this)">luxury jacket</button><button class='filter-btn' onclick="filterCards('designer bag', this)">designer bag</button><button class='filter-btn' onclick="filterCards('luxury handbag', this)">luxury handbag</button><button class='filter-btn' onclick="filterCards('designer shoes', this)">designer shoes</button><button class='filter-btn' onclick="filterCards('luxury sneakers', this)">luxury sneakers</button><button class='filter-btn' onclick="filterCards('designer dress', this)">designer dress</button><button class='filter-btn' onclick="filterCards('luxury coat', this)">luxury coat</button><button class='filter-btn' onclick="filterCards('designer top', this)">designer top</button><button class='filter-btn' onclick="filterCards('luxury boots', this)">luxury boots</button><button class='filter-btn' onclick="filterCards('designer belt', this)">designer belt</button><button class='filter-btn' onclick="filterCards('luxury jewelry', this)">luxury jewelry</button><button class='filter-btn' onclick="filterCards('designer sunglasses', this)">designer sunglasses</button><button class='filter-btn' onclick="filterCards('luxury watch', this)">luxury watch</button><button class='filter-btn' onclick="filterCards('designer scarf', this)">designer scarf</button><button class='filter-btn' onclick="filterCards('lululemon define jacket', this)">lululemon define jacket</button><button class='filter-btn' onclick="filterCards('baggy jeans', this)">baggy jeans</button><button class='filter-btn' onclick="filterCards('carhartt jacket', this)">carhartt jacket</button><button class='filter-btn' onclick="filterCards('vintage t shirt', this)">vintage t shirt</button>
+    <button class='filter-btn' onclick="filterCards('designer jacket', this)">designer jacket</button><button class='filter-btn' onclick="filterCards('luxury jacket', this)">luxury jacket</button><button class='filter-btn' onclick="filterCards('designer bag', this)">designer bag</button><button class='filter-btn' onclick="filterCards('luxury handbag', this)">luxury handbag</button><button class='filter-btn' onclick="filterCards('designer shoes', this)">designer shoes</button><button class='filter-btn' onclick="filterCards('luxury sneakers', this)">luxury sneakers</button><button class='filter-btn' onclick="filterCards('designer dress', this)">designer dress</button><button class='filter-btn' onclick="filterCards('luxury coat', this)">luxury coat</button><button class='filter-btn' onclick="filterCards('designer top', this)">designer top</button><button class='filter-btn' onclick="filterCards('luxury boots', this)">luxury boots</button><button class='filter-btn' onclick="filterCards('designer belt', this)">designer belt</button><button class='filter-btn' onclick="filterCards('luxury jewelry', this)">luxury jewelry</button><button class='filter-btn' onclick="filterCards('designer sunglasses', this)">designer sunglasses</button><button class='filter-btn' onclick="filterCards('luxury watch', this)">luxury watch</button><button class='filter-btn' onclick="filterCards('designer scarf', this)">designer scarf</button>
   </div>
   <div class="search-bar">
     <input type="text" id="searchInput" placeholder="Search by brand, size, price..." oninput="searchCards(this.value)">
@@ -130,7 +130,7 @@
             <div class="card-info">
                 <span class="brand">Rick Owens</span>
                 <span class="size">XL</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer jacket</span>
             </div>
         </a>
@@ -139,7 +139,7 @@
             <div class="card-info">
                 <span class="brand">Rick Owens</span>
                 <span class="size">L</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer jacket</span>
             </div>
         </a>
@@ -148,7 +148,7 @@
             <div class="card-info">
                 <span class="brand">Saint Laurent Paris</span>
                 <span class="size">M</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer jacket</span>
             </div>
         </a>
@@ -157,7 +157,7 @@
             <div class="card-info">
                 <span class="brand">Michael Kors</span>
                 <span class="size">4</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer jacket</span>
             </div>
         </a>
@@ -166,7 +166,7 @@
             <div class="card-info">
                 <span class="brand">Burberry</span>
                 <span class="size">L</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer jacket</span>
             </div>
         </a>
@@ -175,7 +175,7 @@
             <div class="card-info">
                 <span class="brand">Other</span>
                 <span class="size">M</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer jacket</span>
             </div>
         </a>
@@ -184,7 +184,7 @@
             <div class="card-info">
                 <span class="brand">Plein Sud</span>
                 <span class="size">6</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer jacket</span>
             </div>
         </a>
@@ -193,7 +193,7 @@
             <div class="card-info">
                 <span class="brand">Other</span>
                 <span class="size">S</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer jacket</span>
             </div>
         </a>
@@ -202,7 +202,7 @@
             <div class="card-info">
                 <span class="brand">Coach</span>
                 <span class="size">M</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer jacket</span>
             </div>
         </a>
@@ -211,7 +211,7 @@
             <div class="card-info">
                 <span class="brand">Burberry</span>
                 <span class="size">XL</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer jacket</span>
             </div>
         </a>
@@ -220,7 +220,7 @@
             <div class="card-info">
                 <span class="brand">Charlotte Simone</span>
                 <span class="size">XS</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer jacket</span>
             </div>
         </a>
@@ -229,7 +229,7 @@
             <div class="card-info">
                 <span class="brand">Charlotte Simone</span>
                 <span class="size">XS</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer jacket</span>
             </div>
         </a>
@@ -238,7 +238,7 @@
             <div class="card-info">
                 <span class="brand">Paloma Wool</span>
                 <span class="size">XS</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer jacket</span>
             </div>
         </a>
@@ -247,7 +247,7 @@
             <div class="card-info">
                 <span class="brand">Jean-Paul Gaultier</span>
                 <span class="size">8</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer jacket</span>
             </div>
         </a>
@@ -256,7 +256,7 @@
             <div class="card-info">
                 <span class="brand">Burberry</span>
                 <span class="size">8</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer jacket</span>
             </div>
         </a>
@@ -265,7 +265,7 @@
             <div class="card-info">
                 <span class="brand">Schott</span>
                 <span class="size">L</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer jacket</span>
             </div>
         </a>
@@ -274,7 +274,7 @@
             <div class="card-info">
                 <span class="brand">Other</span>
                 <span class="size">XS</span>
-                <span class="price">$989.00</span>
+                <span class="price">$1,039.15</span>
                 <span class="query-tag">designer jacket</span>
             </div>
         </a>
@@ -283,7 +283,7 @@
             <div class="card-info">
                 <span class="brand">Other</span>
                 <span class="size">M</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">luxury jacket</span>
             </div>
         </a>
@@ -292,7 +292,7 @@
             <div class="card-info">
                 <span class="brand">Balenciaga</span>
                 <span class="size">M</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">luxury jacket</span>
             </div>
         </a>
@@ -301,7 +301,7 @@
             <div class="card-info">
                 <span class="brand">Source Unknown</span>
                 <span class="size">M</span>
-                <span class="price">$989.00</span>
+                <span class="price">$1,039.15</span>
                 <span class="query-tag">luxury jacket</span>
             </div>
         </a>
@@ -310,7 +310,7 @@
             <div class="card-info">
                 <span class="brand">Canada Goose</span>
                 <span class="size">S</span>
-                <span class="price">$989.00</span>
+                <span class="price">$1,039.15</span>
                 <span class="query-tag">luxury jacket</span>
             </div>
         </a>
@@ -319,7 +319,7 @@
             <div class="card-info">
                 <span class="brand">Yves Saint Laurent</span>
                 <span class="size">L</span>
-                <span class="price">$988.00</span>
+                <span class="price">$1,038.10</span>
                 <span class="query-tag">luxury jacket</span>
             </div>
         </a>
@@ -373,7 +373,7 @@
             <div class="card-info">
                 <span class="brand">Dior</span>
                 <span class="size">US 9</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer bag</span>
             </div>
         </a>
@@ -400,7 +400,7 @@
             <div class="card-info">
                 <span class="brand">Azzedine Alaïa</span>
                 <span class="size">US 8</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer bag</span>
             </div>
         </a>
@@ -409,7 +409,7 @@
             <div class="card-info">
                 <span class="brand">Alexander McQueen</span>
                 <span class="size">US 10.5</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer bag</span>
             </div>
         </a>
@@ -454,7 +454,7 @@
             <div class="card-info">
                 <span class="brand">Maison Margiela</span>
                 <span class="size">US 7</span>
-                <span class="price">$990.00</span>
+                <span class="price">$1,040.20</span>
                 <span class="query-tag">designer bag</span>
             </div>
         </a>
@@ -562,233 +562,35 @@
 <div id="sold" class="tab-content">
   <div class="section-title" style="padding: 24px 32px 16px;">Sold Listings</div>
   <div class="grid">
-        <a href="https://www.depop.com/products/vendimiamercado-calvin-klein-est-1978-by-3de3/" target="_blank" class="card" data-query="designer jacket">
-            <img src="https://media-photos.depop.com/b1/38351790/1737939623_2906c25cb2f8418a8703f05d242c72a3/P8.jpg" alt="Calvin Klein Jeans" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Calvin Klein Jeans</span>
-                <span class="size">XL</span>
-                <span class="price" style="color:#888;text-decoration:line-through">$990.00</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/parkdowshop-vintage-80s-issey-miyake-jacket/" target="_blank" class="card" data-query="designer jacket">
-            <img src="https://media-photos.depop.com/b1/24676263/1413048751_6ba23bd551cf4af9b833f19e4dff9202/P8.jpg" alt="Issey Miyake" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Issey Miyake</span>
-                <span class="size">XL</span>
-                <span class="price" style="color:#888;text-decoration:line-through">$990.00</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/tb1453407-khrisjoy-puff-cloud-jeans-puffer/" target="_blank" class="card" data-query="designer jacket">
-            <img src="https://media-photos.depop.com/b1/305100867/3192654211_fa864df8c76e446980667e7abae2e825/P8.jpg" alt="Other" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+        <a href="https://www.depop.com/products/tuacey214-beautiful-gold-gem-bedazzled-prom-7639/" target="_blank" class="card" data-query="luxury jewelry">
+            <img src="https://media-photos.depop.com/b1/21371879/3703233000_02b0ff896f8d49e2a8791576370ecf80/P8.jpg" alt="Other" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
             <div class="card-info">
                 <span class="brand">Other</span>
-                <span class="size">L</span>
-                <span class="price" style="color:#888;text-decoration:line-through">$989.00</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/hemptress-coach-patchwork-combo-vest-era/" target="_blank" class="card" data-query="luxury jacket">
-            <img src="https://media-photos.depop.com/b1/28504705/2909290699_bb75b5fb1f1543bd92fb1812d9aa86f0/P8.jpg" alt="Coach" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Coach</span>
-                <span class="size">6</span>
-                <span class="price" style="color:#888;text-decoration:line-through">$988.00</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/goldengatethrifted-ships-fast-from-california-brand-8a4e/" target="_blank" class="card" data-query="luxury handbag">
-            <img src="https://media-photos.depop.com/b1/451563543/2739200232_c0a7706809e2440d9d1eee3a40f7697e/P8.jpg" alt="Prada" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Prada</span>
-                <span class="size">$990.00</span>
-                <span class="price" style="color:#888;text-decoration:line-through">N/A</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/hdiet5ich12-new-saint-laurent-womens-110mm-538f/" target="_blank" class="card" data-query="designer dress">
-            <img src="https://media-photos.depop.com/b1/46305121/3594790933_0178d52a812a48fb9f35180c7d875c12/P8.jpg" alt="Saint Laurent Paris" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Saint Laurent Paris</span>
-                <span class="size">US 7</span>
-                <span class="price" style="color:#888;text-decoration:line-through">$989.00</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/gladiolusdenim-saint-laurent-wyatt-leather-boots-25ab/" target="_blank" class="card" data-query="luxury boots">
-            <img src="https://media-photos.depop.com/b1/32753058/3431186320_41920ac2c39544648c5b2cef762b73a2/P8.jpg" alt="Saint Laurent Paris" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Saint Laurent Paris</span>
-                <span class="size">US 9</span>
+                <span class="size">S</span>
                 <span class="price" style="color:#888;text-decoration:line-through">$975.00</span>
                 <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
             </div>
         </a>
-        <a href="https://www.depop.com/products/pettwre-tiffany-co-18k-gold-9e07/" target="_blank" class="card" data-query="luxury jewelry">
-            <img src="https://media-photos.depop.com/b1/431423008/3618866569_7b44ef8333b34e639b14ec09a6f99fed/P8.jpg" alt="Tiffany & Co." onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+        <a href="https://www.depop.com/products/all_things_hypepllc-brand-new-lab-diamond-tennis-4ebf/" target="_blank" class="card" data-query="luxury jewelry">
+            <img src="https://media-photos.depop.com/b1/260431561/3657032468_b49d53c1a26e4f44bb0810d2200ac391/P8.jpg" alt="Other" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
             <div class="card-info">
-                <span class="brand">Tiffany & Co.</span>
+                <span class="brand">Other</span>
                 <span class="size">$975.00</span>
                 <span class="price" style="color:#888;text-decoration:line-through">N/A</span>
                 <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
             </div>
         </a>
-        <a href="https://www.depop.com/products/dannoor-cartier-rimless-gold-gradient-sunglasses-15e4/" target="_blank" class="card" data-query="designer sunglasses">
-            <img src="https://media-photos.depop.com/b1/25041499/3635225495_02ef14f8144043279286617b81e0d1e0/P8.jpg" alt="Other" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Other</span>
-                <span class="size">$912.00</span>
-                <span class="price" style="color:#888;text-decoration:line-through">N/A</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/applepi2kedvintage-lululemon-define-cropped-jacket-comes-2534/" target="_blank" class="card" data-query="lululemon define jacket">
-            <img src="https://media-photos.depop.com/b1/52160652/repop_291401821_3647952428/3701897910_fbe7ccaba6d14c43af5fb06b0ff15a1f/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Lululemon</span>
-                <span class="size">4</span>
-                <span class="price" style="color:#888;text-decoration:line-through">$450.00</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/noonetruer-send-offers-golden-prisoner-3d46/" target="_blank" class="card" data-query="baggy jeans">
-            <img src="https://media-photos.depop.com/b1/51076536/3660186537_b14283777134477383b6bd8def36fdec/P8.jpg" alt="True Religion" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">True Religion</span>
-                <span class="size">34"</span>
-                <span class="price" style="color:#888;text-decoration:line-through">$900.00</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/4evawar-vintage-90s-cradle-of-filth-8247/" target="_blank" class="card" data-query="vintage t shirt">
-            <img src="https://media-photos.depop.com/b1/26882452/3523444605_911ab6b6d00b486fbf7d5ebe79392bc5/P8.jpg" alt="Anvil" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Anvil</span>
-                <span class="size">L</span>
-                <span class="price" style="color:#888;text-decoration:line-through">$950.00</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/popchuk11-tan-and-brown-coach-plaid-9f02/" target="_blank" class="card" data-query="designer bag">
-            <img src="https://media-photos.depop.com/r1/27998027/3364633890_b7d108b8e8614389920622ab81ce6249/P8.jpg" alt="Coach" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Coach</span>
-                <span class="size">$990.00</span>
-                <span class="price" style="color:#888;text-decoration:line-through">N/A</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/fergieferg99-vintage-ralph-lauren-mens-wool-2f2c/" target="_blank" class="card" data-query="designer jacket">
-            <img src="https://media-photos.depop.com/b1/275075284/3582530664_fa6a49fa5022411ab0ff21942eedd864/P8.jpg" alt="Ralph Lauren" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Ralph Lauren</span>
-                <span class="size">Other</span>
-                <span class="price" style="color:#888;text-decoration:line-through">$990.00</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/myin5hik-balenciaga-pink-leather-bag-luxury-ec8b/" target="_blank" class="card" data-query="designer bag">
-            <img src="https://media-photos.depop.com/b1/428018139/3639819888_57ea2bc39ec543b8a59b20e23bef613f/P8.jpg" alt="Balenciaga" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Balenciaga</span>
-                <span class="size">$990.00</span>
-                <span class="price" style="color:#888;text-decoration:line-through">N/A</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/elegantbagsmo-fendi-by-the-way-beige/" target="_blank" class="card" data-query="luxury handbag">
-            <img src="https://media-photos.depop.com/b1/292927934/2734446271_adb4b4f22486498a9afd1e80b21bd534/P8.jpg" alt="Fendi" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Fendi</span>
-                <span class="size">$989.99</span>
-                <span class="price" style="color:#888;text-decoration:line-through">N/A</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/museboutique-pink-balenciaga-mini-city/" target="_blank" class="card" data-query="luxury handbag">
-            <img src="https://media-photos.depop.com/b1/4233887/3327906549_9a266b29a7eb406b89664d0cdf5b4d11/P8.jpg" alt="Balenciaga" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Balenciaga</span>
-                <span class="size">$989.98</span>
-                <span class="price" style="color:#888;text-decoration:line-through">N/A</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/webuyshoescom-always-authentic-ships-1-business-771c/" target="_blank" class="card" data-query="designer shoes">
-            <img src="https://media-photos.depop.com/b1/401876597/3326818157_430d48dfc20d4377803ac2cc6ff7dcb2/P8.jpg" alt="Nike" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Nike</span>
-                <span class="size">US 6</span>
-                <span class="price" style="color:#888;text-decoration:line-through">$990.00</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/bhoutlaw-hynes-park-silver-off-shoulder-beaded-9921/" target="_blank" class="card" data-query="designer dress">
-            <img src="https://media-photos.depop.com/b1/272857179/3564213845_60e524883e7044ca829cc0eb3ee197d9/P8.jpg" alt="Other" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Other</span>
-                <span class="size">6</span>
-                <span class="price" style="color:#888;text-decoration:line-through">$989.00</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/tb1453407-khrisjoy-puff-cloud-puffer-glitter/" target="_blank" class="card" data-query="designer dress">
-            <img src="https://media-photos.depop.com/b1/305100867/3192653588_4b6a84b3302e475293c432525f39074a/P8.jpg" alt="Other" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Other</span>
-                <span class="size">L</span>
-                <span class="price" style="color:#888;text-decoration:line-through">$989.00</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/margarettmorris-chanel-brown-leather-knee-high-26d9/" target="_blank" class="card" data-query="luxury boots">
-            <img src="https://media-photos.depop.com/r1/10406281/3404755489_78cd3ca290cb4d2e9d55b31b88e390c7/P8.jpg" alt="Chanel" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+        <a href="https://www.depop.com/products/elenaakvm-black-chanel-sunglasses-with-silver-14b3/" target="_blank" class="card" data-query="designer sunglasses">
+            <img src="https://media-photos.depop.com/b1/6849964/3701743628_9d82dfc2ab2b4f5797cb1aa894209637/P8.jpg" alt="Chanel" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
             <div class="card-info">
                 <span class="brand">Chanel</span>
-                <span class="size">US 10</span>
-                <span class="price" style="color:#888;text-decoration:line-through">$975.00</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/mei_n-cartier-trinity-ring-not-familiar-05d5/" target="_blank" class="card" data-query="luxury jewelry">
-            <img src="https://media-photos.depop.com/b1/8481947/3588702599_7dd8cc2cc23d439c9365213e4ea6019b/P8.jpg" alt="Cartier" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Cartier</span>
-                <span class="size">$980.00</span>
-                <span class="price" style="color:#888;text-decoration:line-through">N/A</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/cutelieoblue27-zales-1-ct-tw-ring-56d2/" target="_blank" class="card" data-query="luxury jewelry">
-            <img src="https://media-photos.depop.com/b1/239792488/3615282138_96a6fe5b7f5648d2bed0e23d5a84397f/P8.jpg" alt="Other" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Other</span>
-                <span class="size">$975.00</span>
-                <span class="price" style="color:#888;text-decoration:line-through">N/A</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/c1rlosjrsalazar-beautiful-iced-out-luxury-style-watch-e6c0/" target="_blank" class="card" data-query="luxury watch">
-            <img src="https://media-photos.depop.com/b1/420494004/3630300312_805643fd51554c92b09f8c273c7d60fd/P8.jpg" alt="Cartier" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Cartier</span>
                 <span class="size">$950.00</span>
                 <span class="price" style="color:#888;text-decoration:line-through">N/A</span>
                 <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
             </div>
         </a>
-        <a href="https://www.depop.com/products/drmko33-audemars-piguet-royal-oak-offshore-a7dd/" target="_blank" class="card" data-query="luxury watch">
-            <img src="https://media-photos.depop.com/b1/48477803/3624334263_d22a35477d5b463ea463d06e30af58e4/P8.jpg" alt="Audemars Piguet" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
-            <div class="card-info">
-                <span class="brand">Audemars Piguet</span>
-                <span class="size">$950.00</span>
-                <span class="price" style="color:#888;text-decoration:line-through">N/A</span>
-                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
-            </div>
-        </a>
-        <a href="https://www.depop.com/products/morgan7oko-real-gucci-watch-see-last-fbb9/" target="_blank" class="card" data-query="luxury watch">
-            <img src="https://media-photos.depop.com/b1/23887111/3623343408_574009ded8f546e0b212425d82e0f543/P8.jpg" alt="Gucci" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+        <a href="https://www.depop.com/products/refugsosolutionllc-100-authentic-gucci-full-4992/" target="_blank" class="card" data-query="luxury watch">
+            <img src="https://media-photos.depop.com/b1/217350205/3638887096_d240f87e5e434e3d92c837ce729204ae/P8.jpg" alt="Gucci" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
             <div class="card-info">
                 <span class="brand">Gucci</span>
                 <span class="size">$950.00</span>
@@ -796,48 +598,399 @@
                 <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
             </div>
         </a>
-        <a href="https://www.depop.com/products/vintageb5ooklyn2000-burberry-multicoloured-scarf-luxury-scarf-f475/" target="_blank" class="card" data-query="designer scarf">
-            <img src="https://media-photos.depop.com/b1/249734251/3699018393_4bd753601a294b4fab9d3993f7670d66/P8.jpg" alt="Burberry" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+        <a href="https://www.depop.com/products/hawaiilily22-lululemonalo-bundle-60-pieces-scuba/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/47579871/2754565320_d9294b4a50574713a3ff5921e70710cc/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
             <div class="card-info">
-                <span class="brand">Burberry</span>
-                <span class="size">$900.00</span>
-                <span class="price" style="color:#888;text-decoration:line-through">N/A</span>
+                <span class="brand">Lululemon</span>
+                <span class="size">4</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$750.00</span>
                 <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
             </div>
         </a>
-        <a href="https://www.depop.com/products/27726210182-enfants-riches-deprimes-baggy-distressed/" target="_blank" class="card" data-query="baggy jeans">
-            <img src="https://media-photos.depop.com/b1/33806560/3273277611_c2b254498e9d40e29f7c04521dfd9b6c/P8.jpg" alt="Enfants Riches Déprimés" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+        <a href="https://www.depop.com/products/essnjay-lululemon-buttercream-activewear-set-with-8680/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/39366122/3692779593_23aa267f3802412eb6e6f5edb9dd88aa/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
             <div class="card-info">
-                <span class="brand">Enfants Riches Déprimés</span>
-                <span class="size">30"</span>
-                <span class="price" style="color:#888;text-decoration:line-through">$900.00</span>
+                <span class="brand">Lululemon</span>
+                <span class="size">10</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$500.00</span>
                 <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
             </div>
         </a>
-        <a href="https://www.depop.com/products/cantstopbiting-message-before-buying-carhartt-coat/" target="_blank" class="card" data-query="carhartt jacket">
-            <img src="https://media-photos.depop.com/b1/5212140/repop_10782967_1673518112/3152827647_074626bad1e9407aa63b6e5258bc3970/P8.jpg" alt="Carhartt" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+        <a href="https://www.depop.com/products/lovelainek-trade-trade-trade-do-not-e93d/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/222582465/3690364277_607030793cdd47658526848fc914dba9/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
             <div class="card-info">
-                <span class="brand">Carhartt</span>
-                <span class="size">L</span>
-                <span class="price" style="color:#888;text-decoration:line-through">$969.00</span>
+                <span class="brand">Lululemon</span>
+                <span class="size">6</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$500.00</span>
                 <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
             </div>
         </a>
-        <a href="https://www.depop.com/products/aceonero-vintage-resurrection-nirvana-band-tee/" target="_blank" class="card" data-query="vintage t shirt">
-            <img src="https://media-photos.depop.com/b1/53633737/3324820662_32b0f6cbf5c545878943f39fb8adbb98/P8.jpg" alt="Other" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+        <a href="https://www.depop.com/products/essbiay-lululemon-define-cropped-jacket-nulu-8ab1/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/39366122/3692772462_7c86197a40bc493692aa3542858b993d/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
             <div class="card-info">
-                <span class="brand">Other</span>
-                <span class="size">XL</span>
+                <span class="brand">Lululemon</span>
+                <span class="size">10</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$500.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/emedincano7-buttercream-lululemon-define-jacket-size-74fd/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/471175251/3607045522_60842eaa4ec347aa8eecb046c671481d/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Lululemon</span>
+                <span class="size">4</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$500.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/kaydlnle-lululemon-cropped-define-jacket-sonic-3caa/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/33182835/3589138355_1347508938ac406aa2fcda685a79adff/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Lululemon</span>
+                <span class="size">4</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$500.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/kaybenle-lululemon-cropped-define-jacket-galactic-b61e/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/33182835/3589131909_bd01c828a0f740109dd965c90994b832/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Lululemon</span>
+                <span class="size">2</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$500.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/kgydenle-do-not-buy-clearing-out-9e70/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/33182835/3572842080_206f7159ba5e417a94dcfa25acc6f782/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Lululemon</span>
+                <span class="size">2</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$500.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/jessicangeless-lunar-new-year-define-nulu/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/r1/317743685/2565385291_e435c728212c4d9e831f97f37a92c55b/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Lululemon</span>
+                <span class="size">0</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$500.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/vics_thrifts_-viral-strawberry-milkshake-define-jacket/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/43992668/1831932983_9375ef0fbebe40cc85de8b2c8b107ff4/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Lululemon</span>
+                <span class="size">2</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$500.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/haryie-rare-size-4-lululemon-define-5e7d/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/20307040/1826374579_f0cf38fe5f53450b981acd92cade3ad5/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Lululemon</span>
+                <span class="size">4</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$500.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/emmashirleyy-lululemon-butter-cream-cropped-define-312c/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/11748961/2596601973_8a9a6a32ed6c4e508f3bd40c395fdab2/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Lululemon</span>
+                <span class="size">8</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$465.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/thanmai-lululemon-define-jacket-luon-size-c169/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/41322232/3405926388_a8297e00a7364c20a058e4202476edea/P8.jpg" alt="Aritzia" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Aritzia</span>
+                <span class="size">4</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$420.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/afurtad28-lululemon-buttercream-define-cropped-jacket-954b/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/336700539/3702601081_45aa41962a644647ad7114ce4de1ad44/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Lululemon</span>
+                <span class="size">4</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$400.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/avarex1w-super-cute-summerland-parke-mockneckand-9872/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/268402368/3604041741_3a457316b6d749fe8b08f4c4f3a4feab/P8.jpg" alt="Marion Parke" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Marion Parke</span>
+                <span class="size">M</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$400.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/funnybunny99-i-have-a-opal-and/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/46933603/3162927052_af596c72964f4d098a510839db3c2211/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Lululemon</span>
+                <span class="size">4</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$400.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/thriftplugg619-made-in-japan-designer-maison-e009/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/9530174/2929591740_f982ceea721c48f4b834d143d81fc4fe/P8.jpg" alt="Maison Mihara Yasuhiro" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Maison Mihara Yasuhiro</span>
+                <span class="size">S</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$400.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/jaidenchanel-limited-edition-red-lunar-lululemon/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/45378676/2836570653_b0cdeb254eeb414e8ca9982b222b5e56/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Lululemon</span>
+                <span class="size">2</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$400.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/prelovedbyjazi-lululemon-define-cropped-luon-jacket/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/270967084/3037488819_f9fcd87e411547bf8c15cfd3a27736be/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Lululemon</span>
+                <span class="size">4</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$395.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/prelovedbyjazi-lululemon-lunar-new-year-define/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/270967084/2852508199_484b04c9b62942f5952bda4d903f2827/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Lululemon</span>
+                <span class="size">4</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$395.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/prelovedbyjazi-lunar-new-year-cropped-define/" target="_blank" class="card" data-query="lululemon define jacket">
+            <img src="https://media-photos.depop.com/b1/270967084/2839143536_345772021643495d8594d82db870bbeb/P8.jpg" alt="Lululemon" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Lululemon</span>
+                <span class="size">4</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$395.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/jkempkers-vintage-og-skunk-jnco-jeans/" target="_blank" class="card" data-query="baggy jeans">
+            <img src="https://media-photos.depop.com/b1/43642080/2389675874_5cd245c6d6444b4ea5bf5d6ad44ff67f/P8.jpg" alt="JNCO" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">JNCO</span>
+                <span class="size">32"</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$985.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/highlifeuwu-size-52-tribal-south-pole/" target="_blank" class="card" data-query="baggy jeans">
+            <img src="https://media-photos.depop.com/b1/39615763/3204608942_341e3fe54a7c442da5546e584b7bf61d/P8.jpg" alt="Southpole" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Southpole</span>
+                <span class="size">52"</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$975.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/file_chrollo-balenciaga-aw22-lost-tape-baggy/" target="_blank" class="card" data-query="baggy jeans">
+            <img src="https://media-photos.depop.com/b1/21711531/2457306242_483e4b9a864947a8bdd44b2ebf7d588b/P8.jpg" alt="Balenciaga" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Balenciaga</span>
+                <span class="size">33"</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$973.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/viewhillzvintage-supreme-hjr-trompe-loeil-loose/" target="_blank" class="card" data-query="baggy jeans">
+            <img src="https://media-photos.depop.com/b1/212140631/3167463891_8462d46b612a46bd8b875d3347969286/P8.jpg" alt="Supreme" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Supreme</span>
+                <span class="size">32"</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$959.99</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/gulawevdy-attico-black-w-studs-brand-0941/" target="_blank" class="card" data-query="baggy jeans">
+            <img src="https://media-photos.depop.com/b1/483729473/3577780864_bbb12267007f41379da9277d0d1c41b7/P8.jpg" alt="The Attico" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">The Attico</span>
+                <span class="size">26</span>
                 <span class="price" style="color:#888;text-decoration:line-through">$950.00</span>
                 <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
             </div>
         </a>
-        <a href="https://www.depop.com/products/iconicsolcerjerseys-morocco-1994-world-cup-16a2/" target="_blank" class="card" data-query="vintage t shirt">
-            <img src="https://media-photos.depop.com/b1/24198878/3616114859_b6491723020a432fa0a6372d6fd9c23a/P8.jpg" alt="Lotto" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+        <a href="https://www.depop.com/products/patlong-asap-rocky-awge-jeans-size-7d72/" target="_blank" class="card" data-query="baggy jeans">
+            <img src="https://media-photos.depop.com/b1/44334370/3563979464_a2c2c0d174d141159053cf11dc3eaf95/P8.jpg" alt="AWGE" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
             <div class="card-info">
-                <span class="brand">Lotto</span>
+                <span class="brand">AWGE</span>
+                <span class="size">32"</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$950.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/bxbck-vintage-jnco-slugs-size-3fde/" target="_blank" class="card" data-query="baggy jeans">
+            <img src="https://media-photos.depop.com/b1/53193593/3551773307_48b3d9d3e11346bcba9cd139783b10b4/P8.jpg" alt="JNCO" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">JNCO</span>
+                <span class="size">32"</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$950.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/kevin0318-2-pairs-of-jnco-crossbones/" target="_blank" class="card" data-query="baggy jeans">
+            <img src="https://media-photos.depop.com/b1/321282465/2937821529_2b9e4563133741b592231e7038231949/P8.jpg" alt="JNCO" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">JNCO</span>
+                <span class="size">32"</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$950.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/intangiblecayla-balenciaga-hybrids-sz-l-rise/" target="_blank" class="card" data-query="baggy jeans">
+            <img src="https://media-photos.depop.com/b1/18152197/2747793160_63cd4e5b856b46d3a382affbfd627c75/P8.jpg" alt="Balenciaga" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Balenciaga</span>
+                <span class="size">L</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$950.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/flareeeeee-rick-owens-acid-degrade-distressed/" target="_blank" class="card" data-query="baggy jeans">
+            <img src="https://media-photos.depop.com/b1/42210782/2743734136_9b286bbe22bf44fcbb232de19ac8a125/P8.jpg" alt="Rick Owens" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Rick Owens</span>
+                <span class="size">30"</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$950.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/muddyshoo-jnco-jeans-send-offers-32x32/" target="_blank" class="card" data-query="baggy jeans">
+            <img src="https://media-photos.depop.com/b1/52373706/repop_36948277_2411915690/2541802139_34a946f68cf74546a7f926e89e003069/P8.jpg" alt="JNCO" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">JNCO</span>
+                <span class="size">32"</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$950.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/dxxdddyomar-adidas-x-balenciaga-blue-and/" target="_blank" class="card" data-query="baggy jeans">
+            <img src="https://media-photos.depop.com/b1/37347326/2438453977_025a83b111344d04a1377df6ce37ac3d/P8.jpg" alt="Adidas" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Adidas</span>
                 <span class="size">M</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$950.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/j_9_s_-exposure-post-nfs-unless-2355/" target="_blank" class="card" data-query="baggy jeans">
+            <img src="https://media-photos.depop.com/b1/47957158/3701133335_6512861e315a4d7da7c6f350bbf763c6/P8.jpg" alt="Southpole" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Southpole</span>
+                <span class="size">46"</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$900.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/lee_everott-vintage-jnco-buddha-i-am-b095/" target="_blank" class="card" data-query="baggy jeans">
+            <img src="https://media-photos.depop.com/r1/403376023/3665934433_ab4af296cdf64ffe9586e7c675f5e5c2/P8.jpg" alt="JNCO" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">JNCO</span>
+                <span class="size">36"</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$900.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/babcs-vintage-jnco-blue-slugs-0144/" target="_blank" class="card" data-query="baggy jeans">
+            <img src="https://media-photos.depop.com/b1/53193593/3551779945_3fb078863f704da8b7ad4517b9585207/P8.jpg" alt="JNCO" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">JNCO</span>
+                <span class="size">31"</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$900.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/churchvng-jnco-slug-sz33x32-outseam43-jnco-4c22/" target="_blank" class="card" data-query="baggy jeans">
+            <img src="https://media-photos.depop.com/b1/353326766/3541636303_64c3fab633c64b058ff76b251643e33b/P8.jpg" alt="JNCO" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">JNCO</span>
+                <span class="size">33"</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$900.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/philthym-rare-evisu-lot-0001-embroidered-d3ac/" target="_blank" class="card" data-query="baggy jeans">
+            <img src="https://media-photos.depop.com/r1/31223586/3511470498_833a857b8f394f3eb9f888e890a5882c/P8.jpg" alt="Evisu" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Evisu</span>
+                <span class="size">34"</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$900.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/lashedandlaced-better-with-age-simon-rebuilt/" target="_blank" class="card" data-query="carhartt jacket">
+            <img src="https://media-photos.depop.com/b1/45133318/2481493832_22c8bde6c52b47e9a158244e53837b1d/P8.jpg" alt="Other" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Other</span>
+                <span class="size">XXL</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$975.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/gold_vintagestal_-a-genuine-union-made-piece-that-c900/" target="_blank" class="card" data-query="carhartt jacket">
+            <img src="https://media-photos.depop.com/b1/218479004/3673037961_d59cc957b5504b4fb1ace5118d778818/P8.jpg" alt="Carhartt" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Carhartt</span>
+                <span class="size">L</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$960.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/outsoles-vintage-carhartt-detroit-j43-onx/" target="_blank" class="card" data-query="carhartt jacket">
+            <img src="https://media-photos.depop.com/b1/43947201/3343553003_f6e14e52ac8446dfac6e29d69f56bcee/P8.jpg" alt="Carhartt" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Carhartt</span>
+                <span class="size">L</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$950.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/cfdesignss-11-hand-made-jacket-fire/" target="_blank" class="card" data-query="carhartt jacket">
+            <img src="https://media-photos.depop.com/b1/456064496/2686166380_e38630988cee43a8b8db7846b1c5aa5c/P8.jpg" alt="Carhartt" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Carhartt</span>
+                <span class="size">L</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$950.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/hoovessshop-vintage-carhartt-quilted-santa-fe-58cf/" target="_blank" class="card" data-query="carhartt jacket">
+            <img src="https://media-photos.depop.com/b1/45393783/3561662732_56f94e43adae4d7d9371679e36ec1809/P8.jpg" alt="Carhartt" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Carhartt</span>
+                <span class="size">L</span>
                 <span class="price" style="color:#888;text-decoration:line-through">$949.00</span>
+                <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
+            </div>
+        </a>
+        <a href="https://www.depop.com/products/sethhuber75-rare-carhartt-rnj001-brown-jacket-9938/" target="_blank" class="card" data-query="carhartt jacket">
+            <img src="https://media-photos.depop.com/b1/52747019/3631833053_114af9f966c247a8b0846627e285ba38/P8.jpg" alt="Carhartt" onerror="this.src='https://via.placeholder.com/200x200?text=No+Image'"/>
+            <div class="card-info">
+                <span class="brand">Carhartt</span>
+                <span class="size">L</span>
+                <span class="price" style="color:#888;text-decoration:line-through">$900.00</span>
                 <span class="query-tag" style="background:#ffe0e0;color:#cc0000">sold</span>
             </div>
         </a></div>
@@ -855,7 +1008,7 @@
                     <div style="font-size: 11px; color: #888;">avg daily listings</div>
                 </div>
                 <div style="background: #f5f5f5; border-radius: 8px; padding: 10px; text-align: center;">
-                    <div style="font-size: 20px; font-weight: 700; color: #ff2300;">4.3%</div>
+                    <div style="font-size: 20px; font-weight: 700; color: #ff2300;">100.0%</div>
                     <div style="font-size: 11px; color: #888;">sell-through rate</div>
                 </div>
                 <div style="background: #f5f5f5; border-radius: 8px; padding: 10px; text-align: center;">
@@ -876,7 +1029,7 @@
                     <div style="font-size: 11px; color: #888;">avg daily listings</div>
                 </div>
                 <div style="background: #f5f5f5; border-radius: 8px; padding: 10px; text-align: center;">
-                    <div style="font-size: 20px; font-weight: 700; color: #ff2300;">12.0%</div>
+                    <div style="font-size: 20px; font-weight: 700; color: #ff2300;">100.0%</div>
                     <div style="font-size: 11px; color: #888;">sell-through rate</div>
                 </div>
                 <div style="background: #f5f5f5; border-radius: 8px; padding: 10px; text-align: center;">
@@ -897,7 +1050,7 @@
                     <div style="font-size: 11px; color: #888;">avg daily listings</div>
                 </div>
                 <div style="background: #f5f5f5; border-radius: 8px; padding: 10px; text-align: center;">
-                    <div style="font-size: 20px; font-weight: 700; color: #ff2300;">9.5%</div>
+                    <div style="font-size: 20px; font-weight: 700; color: #ff2300;">100.0%</div>
                     <div style="font-size: 11px; color: #888;">sell-through rate</div>
                 </div>
                 <div style="background: #f5f5f5; border-radius: 8px; padding: 10px; text-align: center;">
@@ -918,7 +1071,7 @@
                     <div style="font-size: 11px; color: #888;">avg daily listings</div>
                 </div>
                 <div style="background: #f5f5f5; border-radius: 8px; padding: 10px; text-align: center;">
-                    <div style="font-size: 20px; font-weight: 700; color: #ff2300;">5.3%</div>
+                    <div style="font-size: 20px; font-weight: 700; color: #ff2300;">100.0%</div>
                     <div style="font-size: 11px; color: #888;">sell-through rate</div>
                 </div>
                 <div style="background: #f5f5f5; border-radius: 8px; padding: 10px; text-align: center;">
@@ -938,9 +1091,9 @@
   new Chart(document.getElementById('sellThroughChart'), {
     type: 'bar',
     data: { 
-      labels: ["designer jacket", "vintage t shirt", "luxury watch", "luxury jewelry", "luxury handbag", "designer dress", "luxury boots", "designer bag", "baggy jeans", "luxury jacket", "lululemon define jacket", "designer sunglasses", "designer shoes", "designer scarf", "carhartt jacket", "luxury sneakers", "luxury coat", "designer top", "designer belt"], 
+      labels: ["vintage t shirt", "lululemon define jacket", "baggy jeans", "carhartt jacket", "luxury jewelry", "luxury watch", "designer jacket", "luxury handbag", "designer dress", "designer bag", "luxury boots", "luxury jacket", "designer top", "designer sunglasses", "designer scarf", "luxury sneakers", "luxury coat", "designer shoes", "designer belt"], 
       datasets: [{ 
-        data: [17.4, 12.0, 25.0, 12.5, 27.3, 17.6, 10.5, 8.3, 9.5, 16.7, 4.3, 4.5, 7.1, 4.8, 5.3, 0.0, 0.0, 0.0, 0.0], 
+        data: [100.0, 100.0, 100.0, 100.0, 19.2, 30.8, 17.4, 27.3, 17.6, 12.5, 10.5, 16.7, 11.1, 4.5, 4.8, 0.0, 0.0, 0.0, 0.0], 
         backgroundColor: '#ff2300',
         label: 'Sell-through %'
       }] 
@@ -949,12 +1102,12 @@
   });
   new Chart(document.getElementById('brandsChart'), {
     type: 'bar',
-    data: { labels: ["Lululemon", "Carhartt", "Balenciaga", "Louis Vuitton", "Gucci", "Cartier", "JNCO", "Chanel", "Hermes", "Yves Saint Laurent"], datasets: [{ data: [20, 16, 13, 11, 11, 11, 9, 9, 8, 6], backgroundColor: '#ff2300' }] },
+    data: { labels: ["Lululemon", "Carhartt", "Balenciaga", "Cartier", "Louis Vuitton", "Gucci", "JNCO", "Chanel", "Hermes", "Yves Saint Laurent"], datasets: [{ data: [20, 16, 13, 12, 11, 11, 9, 9, 8, 6], backgroundColor: '#ff2300' }] },
     options: { plugins: { legend: { display: false } }, scales: { x: { ticks: { maxRotation: 45 } } } }
   });
   new Chart(document.getElementById('priceChart'), {
     type: 'bar',
-    data: { labels: ["designer shoes", "designer jacket", "luxury jacket", "luxury boots", "luxury sneakers", "vintage t shirt", "baggy jeans", "designer dress", "carhartt jacket", "designer top", "designer belt", "lululemon define jacket", "designer scarf", "designer bag", "luxury watch", "luxury jewelry", "luxury handbag", "luxury coat", "designer sunglasses"], datasets: [{ data: [990.0, 989.95, 989.2, 982.24, 979.37, 959.05, 936.47, 919.29, 901.67, 880.0, 599.84, 463.41, 284.45, 225.0, 105.56, 46.43, 0, 0, 0], backgroundColor: '#ff2300', label: 'Avg $' }] },
+    data: { labels: ["designer shoes", "designer jacket", "luxury jacket", "luxury boots", "luxury sneakers", "designer dress", "designer top", "designer belt", "designer scarf", "designer bag", "luxury watch", "luxury jewelry", "luxury handbag", "luxury coat", "designer sunglasses"], datasets: [{ data: [1040.2, 1040.14, 1039.36, 1032.05, 1029.04, 965.9, 910.18, 630.26, 298.88, 247.67, 110.91, 0, 0, 0, 0], backgroundColor: '#ff2300', label: 'Avg $' }] },
     options: { plugins: { legend: { display: false } }, scales: { x: { ticks: { maxRotation: 45 } }, y: { ticks: { callback: v => '$' + v } } } }
   });
   function filterCards(query, btn) {
